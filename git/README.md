@@ -20,9 +20,22 @@
 - **git checkout** dùng để chuyển nhánh
 - **git branch -d**: sau khi gộp nhánh từ 'git merge' thì 'git branch -d' sẽ xóa nhánh vừa tạo
 - **git remote 'name'**: liên kết các repository ở local với phía server
+
+
 - **git push --set-upstream origin master**: đẩy code lên github
+## Tự học
+# Learn Markdown
+    '#' độ lớn cỡ chữ.
+    '**' in đậm 
+    '
 ### Những vấn đề chưa hiểu: 
-- Chưa quên với các lệnh trong git.
+- Chưa quen với các lệnh trong git.
+# Learn fontend: 
+- Hôm nay học: HTML, CSS
+- Yêu cầu: tạo một trang web, lấy ý tưởng từ kênh14.vn
+- Những thứ đã học ngày hôm nay:
+	> - Custom một page kenh14 https://kenh14.vn/
+	> - Chia layout trang web 
 
 
 
