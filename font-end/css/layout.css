@@ -1,0 +1,33 @@
+.main .header {
+  background-color: #f0a52b;
+}
+
+.main .header .nav-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main .header .nav-menu .menuitems {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+}
+
+.main .header .container-fluid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main .header .container-fluid .arrow-header .arrow {
+  color: #ffff;
+}
+/*# sourceMappingURL=layout.css.map */
