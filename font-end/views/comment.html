@@ -1,39 +1,98 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <title>Title</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-
 <body>
-    <div class="container">
-        <div class="card">
-            <div class="card-body">
-                <p class="set-commnet">wqewqe</p>
-                <textarea name="" id="" cols="30" rows="5">commment</textarea>
+    <div class="container mt-5">
+        <div class="card col-6" style="background: #F0F2F5">
+            <div class="card-body d-flex  " style=" box-sizing: border-box;">
+                <div class="mr-auto p-2" id="setComment" ></div>
+                <div class="p-2" id="timeAgo" style="font-style: italic;">
+                </div>
+                <div class=" p-2" id="deleteComment" ></div>
             </div>
-
-
+            <div class="card-body">
+                <input class="form-control" id="commenthere" style="border: 1px solid #F0F2F5"
+                    placeholder="Comment here"/>
+            </div>
+            <div class="card-footer ml-auto p-2">
+                <button class="btn btn-primary" id="comment">Commnet</button>
+                <button class="btn btn-outline-primary" id="clear">Clear</button>
+            </div>
         </div>
     </div>
+    <script>
+        arr = [];
+        document.getElementById('comment').onclick = function () {
+            postcomment();
+            console.log(arr);
+            
+        }
+        document.getElementById('deleteComment').onclick = function () {
+            deleteComment();
+        }
+        document.getElementById('clear').onclick = function () {
+           location.reload();
+        }
+        function deleteComment(){
+            const element = document.getElementById("setComment").querySelector("p");
+            element.remove();
+            const element1 = document.getElementById("timeAgo").querySelector("p");
+            element1.remove();
+            const element2 = document.getElementById("deleteComment").querySelector("button");
+            element2.remove();
+        }
+        function postcomment() {
+            let commentHere = document.getElementById('commenthere').value;
+            if(commentHere == ""){
+                return
+            }
+            arr.push(commentHere);
+            const para = document.createElement("p");
+            para.innerHTML = commentHere;
+            document.getElementById("setComment").appendChild(para);
+            timeAgo();
+            btndelete();
+            document.getElementById('commenthere').value ="";   
+        }
+        function timeAgo() {
+            var timeAgo = new Date();
+            var time = timeAgo.getHours() +" :"+ timeAgo.getMinutes()+" :"+ timeAgo.getSeconds();
+            
+                const para = document.createElement("p");
+            para.innerHTML = time;
+            document.getElementById("timeAgo").appendChild(para);
+            
+        }
+        function btndelete() {
+            let btndelete = document.getElementById('deleteComment').value = 'Delete';
+            const para = document.createElement("button");
+            para.classList.add("btn-sm")
+            para.style.background = "red";
+            para.style.display="block";
+            para.style.margin="4px";
+            para.innerHTML = btndelete;
+            document.getElementById('deleteComment').appendChild(para);
+        }
+    </script>
     <!-- Optional JavaScript -->
+    <!-- timeAgo -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
-
 </html>
