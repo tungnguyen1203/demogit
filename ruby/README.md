@@ -8,14 +8,70 @@
 - Trong Ruby khi khai báo biến thì không yêu cầu giá trị biến cụ thể
     > ex: myvar = 48
 - Biến toàn cục: Khác với biến cục bộ, biến toàn cục được khai báo với tên bắt đầu bằng ký tự $ và biến toàn cục có phạm vi sử dụng trong toàn bộ chương trình.
-
+```ruby
+$global_variable = 'Toi chua duoc thay doi.'
+def variable_scope
+    puts $global_variable = 'Toi da bi thay doi.'
+end
+variable_scope #Toi da bi thay doi.
+$global_variable #Toi da bi thay doi.
+```
 
 
 - Biến cục bộ: Phạm vi sử dụng của biến cục bộ phụ thuộc vào vị trí của biến khi khai báo.
+```ruby
+#irb 
+local_variable = 'Toi nam ngoai method.'
+def variable_scope
+    puts local_variable = 'Toi nam trong method.'
+end
 
+variable_scope #Toi nam trong method
+puts local_variable #Toi nam ngoai method
+```
 
-- Biến đối tượng
-- Biến lớp 
+- Biến đối tượng: Biến được bắt đầu bằng ký tự @ được gọi là "Biến Đối Tượng", có nghĩa là nó chỉ thuộc về một đối tượng riêng lẻ hoặc một đối tượng của một lớp.
+```ruby
+class Nguoi
+
+  def initialize(ten)
+    @ten = ten
+  end
+
+  def show
+    puts @ten
+  end
+end
+
+first = Nguoi.new('tung')
+first.show # tung
+
+second = Nguoi.new('nguyen')
+second.show # nguyen
+```
+- Biến lớp: Để định nghĩa biến thuộc class, chúng ta sử dụng ký tự @@ trước tên biến. Khác với instance variable, class variable sẽ được dùng chung cho tất cả các đối tượng của lớp đó.
+```ruby
+class Dog
+
+  def initialize(leg)
+    @@leg = leg
+  end
+
+  def show_leg
+    puts @@leg
+  end
+
+end
+
+first = Dog.new(4)
+first.show_leg # 4
+
+second = Dog.new(10)
+second.show_leg # 10
+
+first.show_leg # 10
+```
+
 - Hằng
     -  Hằng cũng giống như một biến nhưng trong quá trình chạy thì giá trị của hằng là không thay đổi.
 
