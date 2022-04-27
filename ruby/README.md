@@ -409,3 +409,4 @@ puts thu_nuoi.cat
 puts thu_nuoi.duck
 puts DongVat.people
 ```
+---
