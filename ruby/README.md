@@ -79,11 +79,11 @@ first.show_leg # 10
 
 - Trong **ruby** là một chuỗi các kí tự được đặt trong ('') hoặc
 đặt trọng ("")
-- Để ra giá trị của chuỗi ta dùng hàm   
+- Để  in ra giá trị của chuỗi ta dùng hàm   
 ---
     puts
     print
-*puts thĩ xuống hàng còn print thì không*
+*puts thì xuống hàng còn print thì không*
 
 <h1>Symbol</h1>
 
@@ -113,8 +113,9 @@ first.show_leg # 10
 - Trong ruby thì giá trị Null sẽ được định nghĩa là Nil
 <h1>Hash</h1>
 
-- Là một dạng câu trúc dữ liệu được luư dưới dạng **key-value**
+- Là một dạng câu trúc dữ liệu được lưu dưới dạng **key-value**
 ---
+    //Tạo mới một hash
     car = Hash.new
     //kiểm tra hash
     car.class
