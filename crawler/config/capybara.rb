@@ -1,6 +1,6 @@
 class SetupCapybara
   DOWNLOAD_PATH = './tmp/chromedriver'
-
+  
   def self.call
     Capybara.register_driver :chrome do |app|
       driver = Capybara::Selenium::Driver.new(app, { browser: :chrome })
@@ -16,7 +16,7 @@ class SetupCapybara
     bridge = driver.browser.send(:bridge)
 
     path = '/session/:session_id/chromium/send_command'
-    path[':session_id'] = bridge.session_ids
+    path[':session_id'] = bridge.session_id
 
     bridge.http.call(:post, path, cmd: 'Page.setDownloadBehavior',
                      params: {

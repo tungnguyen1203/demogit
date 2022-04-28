@@ -1,4 +1,4 @@
-load_path = Dir["./vendor/bundle/ruby/3.0.0/gems/**/lib"]
+load_path = Dir["./vendor/bundle/ruby/2.7.0/gems/**/lib"]
 $LOAD_PATH.unshift(*load_path)
 require 'pry'
 require 'erb'
@@ -12,9 +12,10 @@ require './operation/generate/table_html'
 # Crawl data
 crawl = Operation::Crawl::SiteGeneratedataCrawl.new
 crawl.start do
-  # Generate TABLE HTML
-  html_saved_at = './publics/user_datatable.html'
-  generate = Operation::Generate::TableHtml.new(crawl.file_downloaded, saved_at: html_saved_at)
-  generate.generate
-  p "Generate HTML: #{html_saved_at}"
+    # Generate TABLE HTML
+    html_saved_at = './publics/user_datatable.html'
+
+    generate = Operation::Generate::TableHtml.new(crawl.read_file, saved_at: html_saved_at)
+    generate.generate
+    p "Generate HTML: #{html_saved_at}"
 end

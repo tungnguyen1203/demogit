@@ -5,7 +5,9 @@ source "https://rubygems.org"
 git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
 # gem "rails"
-gem "capybara"
-gem "webdrivers"
+gem "capybara", '3.35.3'
+gem "webdrivers", '4.6.1'
 gem "pry"
+gem "erb"
+gem "json"
 
