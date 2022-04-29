@@ -10,4 +10,4 @@ gem "webdrivers", '4.6.1'
 gem "pry"
 gem "erb"
 gem "json"
-
+gem 'sinatra'

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Title</title>
+    <title>Data</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,35 +10,53 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-        <h1>Data crawl</h1>
-        <table class="table table-hover ">
-            <thead class="thead-dark">
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">Phone</th>
-                <th scope="col">Email</th>
-                <th scope="col">Country</th>
-                <th scope="col">Region</th>
-                <th scope="col">Word</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              
-            </tbody>
-          </table>
-          
-          <script>
-              
-          </script>
+      <h1 style="text-align: center;">Data crawler </h1>
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-6">
+                <button type="button" class="btn btn-outline-primary">CSV export</button>
+                <button type="button" class="btn btn-outline-success">EXCEL</button>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-12">
+                <table class="table table-hover">
+                    <thead class="thead-dark">
+                      <tr>
+                      <th scope="col">#</th>
+                      <% @read_file[0].keys.each do |items| %>
+                        <th scope="col"><%= items.capitalize%></th>
+                        <%# # <th scope="col">Phone</th>
+                        # <th scope="col">Email</th>
+                        # <th scope="col">Country</th>
+                        # <th scope="col">Region</th>
+                        # <th scope="col">text</th> %>
+                        <% end %>
+                      </tr>
+                    </thead>
+                    <tbody>
+                     <% @read_file.each_with_index do | items, index| %>
+                      <tr>
+                        <th ><%= index %></th>
+                        <td>
+                         <%= items["name"] %>
+                        </td>
+                        <td><%= items["phone"] %></td>
+                        <td><%= items["email"] %></td>
+                        <td><%= items["country"] %></td>
+                        <td><%= items["region"] %></td>
+                        <td><%= items["text"] %></td>
+                      </tr>
+                      <% end %>
+                    </tbody>
+                  </table>
+              </div>
+          </div>
+         
+      </div>
+      
+      
+      
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
