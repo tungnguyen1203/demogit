@@ -3,9 +3,9 @@ module Operation
     class SiteGeneratedataCrawl
       include Capybara::DSL
       def start
-        delete_file_download
-        down_file
-        rename_file_download
+        # delete_file_download
+        # down_file
+        # rename_file_download
         yield
         
       end

@@ -11,3 +11,6 @@ gem "pry"
 gem "erb"
 gem "json"
 gem 'sinatra'
+gem 'axlsx'
+gem 'rubyzip'
+gem 'zip-zip'
