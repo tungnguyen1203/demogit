@@ -1,0 +1,13 @@
+current directory: /home/tomosia/Documents/demogit/crawler/vendor/bundle/ruby/2.7.0/gems/json-2.6.1/ext/json
+/home/tomosia/.rvm/rubies/ruby-2.7.2/bin/ruby -I /home/tomosia/.rvm/rubies/ruby-2.7.2/lib/ruby/2.7.0 -r ./siteconf20220428-2768-1lt1n85.rb extconf.rb
+creating Makefile
+
+current directory: /home/tomosia/Documents/demogit/crawler/vendor/bundle/ruby/2.7.0/gems/json-2.6.1/ext/json
+make "DESTDIR=" clean
+
+current directory: /home/tomosia/Documents/demogit/crawler/vendor/bundle/ruby/2.7.0/gems/json-2.6.1/ext/json
+make "DESTDIR="
+make: Nothing to be done for 'all'.
+
+current directory: /home/tomosia/Documents/demogit/crawler/vendor/bundle/ruby/2.7.0/gems/json-2.6.1/ext/json
+make "DESTDIR=" install

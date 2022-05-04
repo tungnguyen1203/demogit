@@ -1,0 +1,15 @@
+current directory: /home/tomosia/Documents/demogit/crawler/vendor/bundle/ruby/2.7.0/gems/cgi-0.3.2/ext/cgi/escape
+/home/tomosia/.rvm/rubies/ruby-2.7.2/bin/ruby -I /home/tomosia/.rvm/rubies/ruby-2.7.2/lib/ruby/2.7.0 -r ./siteconf20220428-23760-9dh2t1.rb extconf.rb
+creating Makefile
+
+current directory: /home/tomosia/Documents/demogit/crawler/vendor/bundle/ruby/2.7.0/gems/cgi-0.3.2/ext/cgi/escape
+make "DESTDIR=" clean
+
+current directory: /home/tomosia/Documents/demogit/crawler/vendor/bundle/ruby/2.7.0/gems/cgi-0.3.2/ext/cgi/escape
+make "DESTDIR="
+compiling escape.c
+linking shared-object cgi/escape.so
+
+current directory: /home/tomosia/Documents/demogit/crawler/vendor/bundle/ruby/2.7.0/gems/cgi-0.3.2/ext/cgi/escape
+make "DESTDIR=" install
+/usr/bin/install -m 0755 escape.so ./.gem.20220428-23760-wmys49/cgi
