@@ -20,8 +20,8 @@ crawl.start do
     html_saved_at = './publics/user_management.html'
     generate = Operation::Generate::TableHtml.new(crawl.read_file, saved_at: html_saved_at)
     generate.generate
-    generate.rw_csv
-    generate.rw_xlsx
+    generate.read_write_csv
+    generate.read_write_xlsx
     p "Generate HTML: #{html_saved_at}"
 end
 #  index

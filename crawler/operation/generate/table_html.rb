@@ -18,7 +18,7 @@ module Operation
 
       end
 
-      def rw_csv
+      def read_write_csv
         #csv read, write
         # file = File.read('./tmp/chromedriver/crawl.json')
         # hash = JSON.parse(file)
@@ -38,7 +38,7 @@ module Operation
         end
       end
 
-      def rw_xlsx
+      def read_write_xlsx
         #xlsx 
         Axlsx::Package.new do |p|
           p.workbook.add_worksheet(name: 'data') do  |sheet| 
@@ -56,6 +56,8 @@ module Operation
         end
       end
 
+      
+      
     end
   end
 end

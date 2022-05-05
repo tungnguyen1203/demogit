@@ -3,9 +3,9 @@ module Operation
     class SiteGeneratedataCrawl
       include Capybara::DSL
       def start
-        # delete_file_download
-        # down_file
-        # rename_file_download
+        delete_file_download
+        down_file
+        rename_file_download
         yield
         
       end
@@ -31,7 +31,7 @@ module Operation
         find(:xpath, '/html/body/div[5]/div[3]/div/div/div[3]/button').click(delay:0.2)
         sleep(5)  
       end
-
+        
       def delete_file_download
         Dir.foreach('tmp/chromedriver') {|f| File.delete("#{'tmp/chromedriver'}/#{f}") if f != '.' && f != '..'}
       end
@@ -39,6 +39,7 @@ module Operation
       def rename_file_download
         Dir.foreach('tmp/chromedriver') {|f| File.rename("#{'tmp/chromedriver'}/#{f}","#{'tmp/chromedriver'}/crawl.json") if f != '.' && f != '..'}
       end
+
     end
   end
 end
